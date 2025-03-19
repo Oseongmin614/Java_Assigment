@@ -48,12 +48,48 @@ public class StringUtil {
 		 }
 		 return String.valueOf(c);
 	}
+	 
 	public static int compareTo(String str1, String str2) {
-		int i=0;
+		int a=0;
+		if (str1.length() - str2.length() != 0) {				//길이가다를경우 길이의 차이를 구한다.
+			return str1.length()>str2.length()?str1.length() - str2.length():str2.length() - str1.length();	}
 		for(int j=0; j<str1.length();j++) {
-			if(str1.charAt(i)!=str2.charAt(i))
-			return (int)str1.charAt(i)-str2.charAt(i);
+			//System.out.println(str1.charAt(j)+""+str2.charAt(j));
+			if(str1.charAt(j)!=str2.charAt(j)) {
+				//System.out.println("차이발생");
+			return (int)str1.charAt(j)-str2.charAt(j);}
 		}
-		return i;
+		return a;
+	}
+	
+	public static int checkChar(String strData, char ch) {
+		int a=0;
+		for(int i=0;i<strData.length();i++) {
+			if(strData.charAt(i)==ch) {
+				a++;
+			}
+		}
+		return a;
+	}
+	
+	public static String removeChar(String oriStr, char delChar) {
+		String str="";
+		for(int i=0;i<oriStr.length();i++) {
+			if(oriStr.charAt(i)==delChar) {
+				oriStr=oriStr.substring(0, i)+oriStr.substring(i+1, oriStr.length());  
+			}
+		
+		}
+		return oriStr;
 	}
 }
+
+
+
+
+
+
+
+
+
+
