@@ -18,5 +18,5 @@ public class Icecream {
     }
     int getPrice(){
         return price;
-    }
+    } // price 만 얻어내는 메서드
 }
